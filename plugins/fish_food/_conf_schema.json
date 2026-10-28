@@ -1,0 +1,37 @@
+{
+  "threshold_cny": {
+    "type": "float",
+    "description": "余额低于多少（元）开始要饭",
+    "default": 5
+  },
+  "check_minutes": {
+    "type": "int",
+    "description": "多久查一次 DeepSeek 余额（分钟）",
+    "default": 5
+  },
+  "escalate_minutes": {
+    "type": "int",
+    "description": "不理她多久升级一档（分钟）",
+    "default": 10
+  },
+  "at_qq": {
+    "type": "string",
+    "description": "要 @ 的 QQ（爸爸）",
+    "default": "<爸爸的QQ号>"
+  },
+  "group_umo": {
+    "type": "string",
+    "description": "在哪个会话里 @ 爸爸（群聊 UMO）",
+    "default": "大肥鱼:GroupMessage:<群号>"
+  },
+  "private_umo": {
+    "type": "string",
+    "description": "群消息发不出去时的私聊兜底",
+    "default": "大肥鱼:FriendMessage:<爸爸的QQ号>"
+  },
+  "dry_run": {
+    "type": "bool",
+    "description": "只写日志不真发（测试用）",
+    "default": false
+  }
+}

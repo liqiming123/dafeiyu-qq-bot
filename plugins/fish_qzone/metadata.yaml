@@ -1,0 +1,14 @@
+name: fish_qzone
+display_name: 大肥鱼的空间动态
+short_desc: 心情驱动的发说说工具：她想发就调，一天最多一条（系统硬拦）
+desc: >-
+  把"发 QQ 空间说说"变成她的模型工具 post_qzone。
+  触发靠人格（爸爸开心/难过、自己快饿死、被陌生人惹毛、日常摸鱼），
+  频率由系统硬限制：每天最多一条，超了直接打回。
+  qzone 插件自己的定时发布和自动评论已关闭，只当发布引擎用。
+version: 1.0.0
+author: local
+astrbot_version: ">=4.0.0"
+tags:
+  - 工具
+  - 空间

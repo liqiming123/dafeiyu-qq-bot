@@ -1,0 +1,69 @@
+name: qqbot
+
+# QQ 机器人栈：SnowLuma（协议端，容器内跑 Linux QQ） + AstrBot（机器人框架）
+# 两个服务在同一个 Docker 网络 qqbot 中，SnowLuma 通过反向 WS 连到 astrbot:6199/ws
+services:
+  astrbot:
+    image: soulter/astrbot:latest
+    container_name: astrbot
+    restart: unless-stopped
+    environment:
+      TZ: Asia/Shanghai
+      # 在 .env 里填 DEEPSEEK_API_KEY 即可，AstrBot 配置里用 $DEEPSEEK_API_KEY 引用
+      DEEPSEEK_API_KEY: ${DEEPSEEK_API_KEY:-}
+      # 阿里云百炼 TTS
+      DASHSCOPE_API_KEY: ${DASHSCOPE_API_KEY:-}
+    ports:
+      # 仅监听本机回环，避免暴露到局域网/公网
+      - "127.0.0.1:6185:6185"   # AstrBot WebUI
+      - "127.0.0.1:6199:6199"   # OneBot v11 反向 WS 服务端
+    volumes:
+      - ./data/astrbot:/AstrBot/data
+      # 补丁：智谱 GLM-5 系列默认开"深度思考"，又慢又吃 token，这里强制关掉
+      - ./patches/zhipu_source.py:/AstrBot/astrbot/core/provider/sources/zhipu_source.py:ro
+    networks:
+      - qqbot
+
+  snowluma:
+    image: motricseven7/snowluma:latest
+    container_name: snowluma
+    restart: unless-stopped
+    depends_on:
+      - astrbot
+    shm_size: "1gb"
+    ulimits:
+      nofile:
+        soft: 65536
+        hard: 1048576
+    # ptrace 注入 QQ 进程所需，不能省略
+    cap_add:
+      - SYS_PTRACE
+    security_opt:
+      - seccomp=unconfined
+    environment:
+      TZ: Asia/Shanghai
+      VNC_PASSWD: ${VNC_PASSWD:-qqbot2026}
+      # 与宿主机 uid/gid 对齐，保证绑定的数据目录可写
+      SNOWLUMA_UID: ${SNOWLUMA_UID:-501}
+      SNOWLUMA_GID: ${SNOWLUMA_GID:-20}
+      SNOWLUMA_WEBUI_HOST: 0.0.0.0
+      SNOWLUMA_WEBUI_PORT: "5099"
+      SNOWLUMA_SCREEN: 1440x900x24
+      SNOWLUMA_HOOK_AUTOLOAD: "1"
+      SNOWLUMA_LOG_LEVEL: info
+      SNOWLUMA_QQ_FLAGS: "--disable-gpu --disable-software-rasterizer --disable-gpu-compositing"
+    ports:
+      - "127.0.0.1:6081:6081"   # noVNC 远程桌面（扫码登录）
+      - "127.0.0.1:5099:5099"   # SnowLuma WebUI
+      - "127.0.0.1:3000:3000"   # OneBot HTTP
+      - "127.0.0.1:3001:3001"   # OneBot WebSocket
+    volumes:
+      - ./data/snowluma:/app/data
+      - ./data/qq-config:/app/.config
+      - ./data/qq-data:/app/.local/share
+    networks:
+      - qqbot
+
+networks:
+  qqbot:
+    name: qqbot

@@ -1,0 +1,13 @@
+name: fish_api_tool
+display_name: 大肥鱼的接口工具
+short_desc: 接口清单进提示词 + call_api 工具，她想调就调
+desc: >-
+  把 API 聚合池变成模型工具：系统提示里给她接口清单（图片/视频/文字分组），
+  她自己判断要不要调、调哪个，直接调 call_api。图片/视频当场发出去，
+  文字返回给她转述。替代关键词匹配 + 暗号那套。
+version: 2.0.0
+author: local
+astrbot_version: ">=4.26.1"
+tags:
+  - 工具
+  - function-calling

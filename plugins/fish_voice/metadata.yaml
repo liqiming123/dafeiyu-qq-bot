@@ -1,0 +1,14 @@
+name: fish_voice
+display_name: 语音她自己决定
+short_desc: 默认文字；她在回复末尾写 [[语音]] 暗号才转成 Momo 语音
+desc: >-
+  替代 AstrBot 的概率触发 TTS：语音不再是随机掷骰子，
+  而是她自己判断——心情好/撒娇/催睡觉时在回复最后写 [[语音]] 暗号
+  （不显示），整条回复就变成 Momo 音色的语音；不写就纯文字。
+  合成走阿里云百炼 qwen3-tts-flash，失败自动回退文字。
+version: 1.0.0
+author: local
+astrbot_version: ">=4.0.0"
+tags:
+  - 语音
+  - 人格

@@ -1,0 +1,13 @@
+name: admin_only
+display_name: 群聊开放 · 私聊仅管理员
+short_desc: 群里谁 @ 都能聊，私聊只回管理员
+desc: >-
+  群聊：任何人 @ 机器人都能对话，没 @ 不会触发。
+  私聊：默认只有 admins_id 里的人能对话，其他人静默。
+  想让所有人都能私聊，把 main.py 里的 _PRIVATE_ADMIN_ONLY 改成 False 并重启。
+version: 1.1.0
+author: local
+astrbot_version: ">=4.0.0"
+tags:
+  - 权限
+  - 管理员

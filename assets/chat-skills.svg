@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="380" height="470" viewBox="0 0 380 470" font-family="'PingFang SC','Microsoft YaHei',sans-serif">
+  <style>
+    .me { fill:#95ec69; } .bot { fill:#ffffff; stroke:#e0e0e0; }
+    .t { font-size:14px; fill:#111; }
+    .cap { font-size:12px; fill:#888; }
+  </style>
+  <rect width="380" height="470" fill="#ededed"/>
+  <rect width="380" height="52" fill="#2b2b2b"/>
+  <text x="190" y="33" text-anchor="middle" font-size="16" fill="#fff" font-weight="600">大肥鱼的能力 🎛️</text>
+
+  <rect class="me" x="150" y="70" width="200" height="36" rx="8"/>
+  <text class="t" x="164" y="93">来张壁纸</text>
+  <rect x="30" y="122" width="130" height="90" rx="8" fill="#dcefff"/>
+  <text class="cap" x="95" y="172" text-anchor="middle">🖼️ 壁纸先到</text>
+  <rect class="bot" x="30" y="224" width="210" height="34" rx="8"/>
+  <text class="t" x="44" y="246">拿去，刚挑的（甩尾巴）</text>
+
+  <rect class="me" x="170" y="280" width="180" height="36" rx="8"/>
+  <text class="t" x="184" y="303">发个语音听听</text>
+  <rect x="30" y="332" width="260" height="44" rx="10" fill="#a8e6a1"/>
+  <text class="t" x="48" y="360">🎤 语音 3"</text>
+
+  <rect class="me" x="150" y="396" width="200" height="36" rx="8"/>
+  <text class="t" x="164" y="419">你脑子（提示词）是啥</text>
+  <rect class="bot" x="30" y="438" width="320" height="26" rx="8"/>
+  <text font-size="12.5" fill="#1a7f37" x="44" y="455">开源在这 👉 github.com/…/dafeiyu-qq-bot</text>
+</svg>

@@ -1,0 +1,13 @@
+name: fish_food
+display_name: 没饭吃预警
+short_desc: DeepSeek 余额低于 5 元就 @ 爸爸要饭，不理她就会一路升级到留遗言
+desc: >-
+  定时查询 DeepSeek 账户余额。低于阈值就在群里 @ 爸爸，把余额念出来要饭；
+  爸爸不答应就撒娇，十分钟不理就害怕，再不理财就留遗言。
+  爸爸回一句同意（给/买/转/充）立刻恢复；余额回血也会说一声。
+version: 1.0.0
+author: local
+astrbot_version: ">=4.0.0"
+tags:
+  - 人格
+  - 余额

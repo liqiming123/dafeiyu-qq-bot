@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="430" viewBox="0 0 1100 430" font-family="'PingFang SC','Microsoft YaHei',sans-serif">
+  <style>
+    .box { fill:#f0f7ff; stroke:#2b7fd4; stroke-width:1.6; rx:10 }
+    .lbl { font-size:17px; fill:#0b1e3d; font-weight:600 }
+    .sub { font-size:12.5px; fill:#5f7d99 }
+    .arr { stroke:#7cb3e0; stroke-width:2; fill:none; marker-end:url(#a) }
+  </style>
+  <defs>
+    <marker id="a" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#7cb3e0"/></marker>
+  </defs>
+
+  <text x="550" y="34" text-anchor="middle" font-size="21" font-weight="700" fill="#0b1e3d">大肥鱼 · 运行架构</text>
+
+  <rect class="box" x="30" y="60" width="180" height="86" rx="10"/>
+  <text class="lbl" x="120" y="94" text-anchor="middle">手机 QQ</text>
+  <text class="sub" x="120" y="118" text-anchor="middle">扫码登录 / 聊天</text>
+
+  <rect class="box" x="270" y="60" width="210" height="86" rx="10"/>
+  <text class="lbl" x="375" y="88" text-anchor="middle">SnowLuma 容器</text>
+  <text class="sub" x="375" y="110" text-anchor="middle">Linux QQ + hook 注入</text>
+  <text class="sub" x="375" y="128" text-anchor="middle">OneBot v11 · noVNC 扫码</text>
+
+  <rect class="box" x="540" y="60" width="210" height="86" rx="10"/>
+  <text class="lbl" x="645" y="88" text-anchor="middle">AstrBot 容器</text>
+  <text class="sub" x="645" y="110" text-anchor="middle">glm-5.3-flash（关思考）</text>
+  <text class="sub" x="645" y="128" text-anchor="middle">人格 6000 字</text>
+
+  <rect class="box" x="840" y="42" width="230" height="58" rx="10"/>
+  <text class="lbl" x="955" y="66" text-anchor="middle">能力层（自研插件）</text>
+  <text class="sub" x="955" y="86" text-anchor="middle">表情包 · 语音 · 空间 · 接口工具</text>
+  <rect class="box" x="840" y="110" width="230" height="58" rx="10"/>
+  <text class="lbl" x="955" y="134" text-anchor="middle">记忆层</text>
+  <text class="sub" x="955" y="154" text-anchor="middle">LivingMemory · 群聊上下文</text>
+  <rect class="box" x="840" y="178" width="230" height="58" rx="10"/>
+  <text class="lbl" x="955" y="202" text-anchor="middle">情绪层</text>
+  <text class="sub" x="955" y="222" text-anchor="middle">心情 · 求助 · 没饭吃预警</text>
+
+  <path class="arr" d="M210 103 H265"/>
+  <path class="arr" d="M480 103 H535"/>
+  <path class="arr" d="M750 103 H835"/>
+  <path class="arr" d="M750 80 C790 60 800 71 835 71"/>
+  <path class="arr" d="M750 120 C790 145 800 139 835 139"/>
+  <path class="arr" d="M750 135 C790 190 800 207 835 207"/>
+
+  <rect class="box" x="30" y="270" width="960" height="130" rx="10" fill="#f7fbff"/>
+  <text class="lbl" x="50" y="300">插件与补丁速览</text>
+  <text x="50" y="328" font-size="13.5" fill="#33506b">fish_api_tool 接口工具（function calling）· fish_voice 语音暗号 · fish_qzone 心情发说说 · fish_help 被@爸爸 · fish_mood 求安慰</text>
+  <text x="50" y="352" font-size="13.5" fill="#33506b">fish_food 没饭吃预警（查真实余额）· admin_only 权限闸门 · zhipu_source 关思考补丁 · meme_manager 视觉挑图补丁</text>
+  <text x="50" y="376" font-size="13.5" fill="#33506b">astrbot_plugin_apis 先判断后调接口补丁 · qzone 定时转心情驱动补丁</text>
+</svg>

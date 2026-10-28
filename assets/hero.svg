@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300">
+  <defs>
+    <linearGradient id="sea" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1e3d"/>
+      <stop offset="1" stop-color="#123a6b"/>
+    </linearGradient>
+    <linearGradient id="fish" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#7cc4ff"/>
+      <stop offset="1" stop-color="#2b7fd4"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="300" rx="18" fill="url(#sea)"/>
+  <circle cx="1050" cy="60" r="90" fill="#ffffff" opacity="0.05"/>
+  <circle cx="140" cy="250" r="120" fill="#ffffff" opacity="0.04"/>
+  <!-- bubbles -->
+  <circle cx="980" cy="200" r="6" fill="#9fd8ff" opacity="0.5"/>
+  <circle cx="1010" cy="160" r="4" fill="#9fd8ff" opacity="0.4"/>
+  <circle cx="995" cy="120" r="3" fill="#9fd8ff" opacity="0.3"/>
+  <!-- whale -->
+  <g transform="translate(80,90) scale(1.15)">
+    <path d="M40 60 Q80 10 160 22 Q240 34 260 74 Q270 104 240 118 L60 118 Q20 110 40 60 Z" fill="url(#fish)"/>
+    <path d="M60 118 Q30 150 8 142 Q16 118 40 112 Z" fill="#2b7fd4"/>
+    <path d="M180 24 Q200 4 224 12 Q212 30 196 36 Z" fill="#e8f6ff"/>
+    <circle cx="212" cy="66" r="7" fill="#0b1e3d"/>
+    <circle cx="214" cy="64" r="2.4" fill="#fff"/>
+    <path d="M232 84 Q244 90 240 100" stroke="#0b1e3d" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M120 30 Q140 22 158 30" stroke="#e8f6ff" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.7"/>
+  </g>
+  <text x="380" y="140" font-family="'PingFang SC','Microsoft YaHei',sans-serif" font-size="58" font-weight="700" fill="#eaf6ff">大肥鱼</text>
+  <text x="382" y="190" font-family="'PingFang SC','Microsoft YaHei',sans-serif" font-size="24" fill="#9fd8ff">QQ 机器人 · 人格 / 插件 / 部署配置 全开源</text>
+  <text x="382" y="226" font-family="'PingFang SC','Microsoft YaHei',sans-serif" font-size="18" fill="#5f9fd8">AstrBot + SnowLuma · 她的脑子就在这个仓库里</text>
+</svg>
