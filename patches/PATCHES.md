@@ -33,7 +33,14 @@
 
 **作用**：停用插件自己的定时发布/自动评论（`publish_cron=""`、`comment_cron=""`、`read_prob=0`），停用它的 `llm_publish_feed` 工具（会绕过 fish_qzone 的一天一条限制）。发布引擎保留给 fish_qzone 用。
 
-## 5. meme_manager 不注册 search_memes 工具
+## 5. astrbot_plugin_qzone 评论修复（三处）
+
+- `core/qzone/client.py`：`parsed.get("data", {}).get("ret")` 在 QZone 返回 `data` 为**字符串**时直接崩（`'str' object has no attribute 'get'`，这就是评论区报错的元凶）→ 补 isinstance 判断
+- `core/llm_action.py` `generate_comment`：评论 prompt 原来只有 `[帖子内容]`，她**不知道这条说是谁发的**，在爸爸空间里也把爸爸当外人怼 → 补 `[帖子作者]：名字（QQ:xxx）`
+- `main.py` llm_view_feed 的 except：`logger.error(e)` 对空异常啥也不记 → 补异常类型和堆栈
+- 配置 `llm.comment_prompt` / `reply_prompt`：写明"作者 QQ 是爸爸 → 用对爸爸的语气（傲娇但亲）；别人 → 有礼貌有底线"
+
+## 6. meme_manager 不注册 search_memes 工具
 
 **文件**：`meme_manager/main.py`，搜 `[本地补丁] 不注册为 LLM 工具`。
 
